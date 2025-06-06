@@ -14,7 +14,8 @@
 - started troubleshooting variant_calling.sh
 
 6/6/25
--finished variant_calling.sh 
+- finished variant_calling.sh 
+- finished summary_stats.sh
 
 
 ## ToDo:
