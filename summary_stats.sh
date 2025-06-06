@@ -12,7 +12,7 @@ do
 # and data/fastqc_trimmed_results/multiqc_data/multiqc_general_stats.txt
 #add these in to their respective places in summary_results.csv
 
-echo summarizing stats for $sample
+echo Summarizing Stats for $sample
 
 #Count how many reads aligned to the E coli genome
 	alignment_count=$(samtools view -F 0x4 results/bam/$sample.bam | wc -l)
