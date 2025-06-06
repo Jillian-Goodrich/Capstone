@@ -2,7 +2,7 @@
 
 module load SAMtools/1.18-GCC-12.3.0
 
-echo sample,raw_read_count,trimmed_read_count,alignment_count,variant_site_count > summary_results.csv
+echo raw_read_count,trimmed_read_count,alignment_count,variant_site_count > summary_results.csv
 
 for fwd in data/trimmed_fastq/*_1.paired.fastq.gz
 do
