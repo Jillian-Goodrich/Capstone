@@ -5,9 +5,16 @@
 - Trouble-shooted and ran setup.sh
 
 6/3/25
-- 
+-continue troubleshooting read_qc.sh
+
+6/4/25
+-finished read_qc.sh
+
+6/5/25
+- started troubleshooting variant_calling.sh
+
+6/6/25
+-finished variant_calling.sh 
 
 
 ## ToDo:
-- Edit, troubleshoot, and run read_qc.sh
-- Edit, troubleshoot, and run variant_calling.sh
