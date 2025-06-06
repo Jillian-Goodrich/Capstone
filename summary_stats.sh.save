@@ -1,0 +1,19 @@
+#Summarizing some statistics from the bioinformatics pipeline data and results
+
+echo sample,raw_read_count,trimmed_read_count,alignment_count,variant_site_count > summary_results.csv
+#refer to MultiQC html documents for the following counts:
+for fwd in data/trimmed_fastq/*_1.paired.fastq.gz
+do
+        sample=$(basename $fwd _1.paired.fastq.gz )
+	raw_read_count=cut -f7 data/fastqc_results/multiqc_data/multiqc_general_stats.txt
+	trimmed_read_count=data/fastqc_trimmed_results/multiqc_data/multiqc_general_stats.txt
+echo ${sample},raw_read_count,trimmed_read_count,  >> summary_results.csv
+done
+#Count how many reads are in the raw and trimmed fastq files
+
+
+#Count how many reads aligned to the E coli genome
+
+#samtools view -F 0x4
+
+#Count the variant sites from each sample
