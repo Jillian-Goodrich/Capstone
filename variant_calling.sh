@@ -7,7 +7,7 @@
 
 #module load SAMtools/1.10-GCC-8.3.0
 #module load BWA/0.7.18-GCCcore-13.3.0 
-module load BCFtools/1.14-GCC-11.2.0
+#module load BCFtools/1.14-GCC-11.2.0
 
 # Download E. coli genome
 #mkdir data/genomes mkdir results/sam mkdir results/bam results/vcf results/bcf 
