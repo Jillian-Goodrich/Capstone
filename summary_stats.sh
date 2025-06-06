@@ -2,7 +2,7 @@
 
 module load SAMtools/1.18-GCC-12.3.0
 
-echo sample,raw_read_count,trimmed_read_count,alignment_count,variant_site_count > summary_results.csv
+echo sample,stage,read_count > summary_results.csv
 
 for fwd in data/trimmed_fastq/*_1.paired.fastq.gz
 do
@@ -11,14 +11,16 @@ do
 #These can be found in the MultiQC html or in data/raw_fastqc_results/multiqc_data/multiqc_general_stats.txt \
 # and data/fastqc_trimmed_results/multiqc_data/multiqc_general_stats.txt
 #add these in to their respective places in summary_results.csv
-
-echo Summarizing Stats for $sample
+	echo ${sample},raw,raw_read_count_for_${sample} >> summary_results.csv
+	echo ${sample},trimmed,trimmed_read_count_for_${sample} >> summary_results.csv
+	
+	echo Summarizing Stats for $sample
 
 #Count how many reads aligned to the E coli genome
 	alignment_count=$(samtools view -F 0x4 results/bam/$sample.bam | wc -l)
+	echo ${sample},aligned,$alignment_count >> summary_results.csv
 
 #Count the variant sites from each sample
 	variant_site_count=$(grep -v '^#' results/vcf/$sample.vcf | wc -l)
-
-	echo ${sample},raw_read_count_for_${sample},trimmed_read_count_for_${sample},$alignment_count,$variant_site_count  >> summary_results.csv
+	echo ${sample},variants,$variant_site_count >> summary_results.csv
 done
